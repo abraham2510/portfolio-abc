@@ -2,8 +2,8 @@ import React from 'react'
 
 const Contact = () => {
     return (
-        <section id="contact" className='mt-16'>
-            <div className="w-[90%] md:w-[80%] mx-auto mt-30 fade-up">
+        <section id="contact" className='mt-16 w-[90%] lg:w-[80%] mx-auto '>
+            <div className="lg:w-[80%] mx-auto mt-30 fade-up">
                 <p className="text-[#FFEB00]">
                     THANK YOU FOR TAKING THE TIME TO VISIT MY WEBSITE.
                 </p>
@@ -21,7 +21,6 @@ const Contact = () => {
                 </div>
             </div>
         </section>
-
     )
 }
 

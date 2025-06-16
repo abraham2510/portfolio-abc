@@ -1,9 +1,19 @@
+import React from 'react'
 import projectsData from "../api/projectsData"
 
 const SomeOtherProjects = () => {
     return (
-        <div className="w-full mt-20">
-            <div className="w-[90%] md:w-[80%] mx-auto">
+        <section className="py-12 md:py-20 lg:w-[80%] mx-auto">
+            <div className='grid grid-cols-1 gap-8 px-4 md:px-20'>
+                <div className="flex flex-col justify-start">
+                    <p className="text-[#FFEB00]">OTHER PROJECTS</p>
+                    <h1 className="font-[800] leading-[72px] text-[36px]">
+                        More Projects
+                    </h1>
+                    <p className="text-slate-400 text-sm md:text-base mt-2 md:mt-4 max-w-2xl">
+                        Here are some other projects I've worked on.
+                    </p>
+                </div>
                 <div className="flex overflow-x-auto pb-6 gap-6 scrollbar-hide">
                     {projectsData.map((project) => (
                         <div key={project.id} className="flex-none w-[350px] bg-[#1C1C1C] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
@@ -50,7 +60,7 @@ const SomeOtherProjects = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

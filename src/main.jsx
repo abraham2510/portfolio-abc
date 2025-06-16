@@ -1,21 +1,18 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
-import About from './components/About'
 import Skills from './components/Skills'
 import Project from './components/Project'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import SomeOtherProjects from './components/SomeOtherProjects'
-
+// import About from './components/About'
 const Body = () => {
   return (
     <>
-      <Navbar />
       <HeroSection />
-      <About />
+      {/* <About /> */}
       <Skills />
       <Project />
       <SomeOtherProjects />
