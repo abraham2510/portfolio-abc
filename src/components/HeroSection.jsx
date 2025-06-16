@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaGithub } from "react-icons/fa";
 import { CiLinkedin, CiMail, CiSaveDown2 } from "react-icons/ci";
+import ThemeToggle from './ThemeToggle';
 
 const HeroSection = () => {
     return (
@@ -10,7 +11,7 @@ const HeroSection = () => {
                     <div className='order-2 md:order-1 flex flex-col justify-center items-center md:items-start text-center md:text-left'>
                         <div className='align-middle space-y-4'>
                             <p className='text-[#FFEB00]'>Front-End Developer</p>
-                            <h1 className='text-3xl md:text-4xl font-semibold text-white'>Hi, I'm ABRAHAM BILL CLINTON</h1>
+                            <h1 className='text-3xl md:text-4xl font-semibold'>Hi, I'm ABRAHAM BILL CLINTON</h1>
                             <p className='text-slate-400 leading-relaxed max-w-lg'>Front-End Developer skilled in React.js, HTML, CSS, and Tailwind CSS, with backend experience in Java and Spring Boot. I build responsive UIs and integrate REST APIs for full-stack web apps.</p>
                             <div className="mt-4 flex flex-wrap justify-center md:justify-start items-center gap-4 text-slate-400">
                                 <a href="https://github.com/abraham2510" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-[#FFEB00] transition-colors duration-300">
@@ -41,6 +42,7 @@ const HeroSection = () => {
                             alt="Profile"
                         />
                     </div>
+                    <ThemeToggle />
                 </div>
             </header>
         </>

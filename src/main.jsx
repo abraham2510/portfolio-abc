@@ -7,10 +7,13 @@ import Project from './components/Project'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import SomeOtherProjects from './components/SomeOtherProjects'
+import ThemeToggle from './components/ThemeToggle'
 // import About from './components/About'
+
 const Body = () => {
   return (
     <>
+      <ThemeToggle />
       <HeroSection />
       {/* <About /> */}
       <Skills />

@@ -2,29 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background: hsl(0, 0%, 0%);
-    color: #fff;
-    scroll-behavior: smooth;
+@layer base {
+    :root {
+        --background: #000000;
+        --text: #ffffff;
+        --text-secondary: #a0a0a0;
+        --primary: #FFEB00;
+        --secondary: #1C1C1C;
+        --accent: #FFEB00;
+        --card-bg: #1a1a1a;
+        --border-color: #333333;
+    }
+
+    .light {
+        --background: #ffffff;
+        --text: #1a1a1a;
+        --text-secondary: #4a4a4a;
+        --primary: #FFEB00;
+        --secondary: #1C1C1C;
+        --accent: #FFEB00;
+        --card-bg: #f5f5f5;
+        --border-color: #e5e5e5;
+    }
 }
 
-::selection{
-    background-color: #FFEB00;
-    color: #000;
+@layer base {
+    body {
+        @apply bg-[var(--background)] text-[var(--text)];
+        scroll-behavior: smooth;
+    }
 }
 
-nav{
-    background: #1C1C1C;
-    color: white;
-    padding: 6px;
+::selection {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+nav {
+    @apply bg-[var(--secondary)] text-[var(--text)] p-1.5;
 }
 
 ul li {
-    transition: color 0.8s ease-in-out, text-decoration-color 0.5s ease-in-out;
+    @apply transition-colors duration-300 text-[var(--text-secondary)];
 }
 
 ul li:hover {
-    text-decoration-color: #FFEB00; /* Change the underline color */
+    @apply text-[var(--text)];
+    text-decoration-color: var(--primary);
 }
 
 @keyframes fadeInDown {
@@ -48,82 +72,109 @@ ul li:hover {
 
 @keyframes fadeInLeft {
     0% {
-      opacity: 0;
-      transform: translateX(-20px);
+        opacity: 0;
+        transform: translateX(-20px);
     }
     100% {
-      opacity: 1;
-      transform: translateX(0);
+        opacity: 1;
+        transform: translateX(0);
     }
-  }
-  
-  .animate-fadeInLeft {
+}
+
+.animate-fadeInLeft {
     animation: fadeInLeft 0.6s ease-out both;
-  }
-  
-  @keyframes fadeIn {
+}
+
+@keyframes fadeIn {
     0% {
-      opacity: 0;
-      transform: scale(0.95);
+        opacity: 0;
+        transform: scale(0.95);
     }
     100% {
-      opacity: 1;
-      transform: scale(1);
+        opacity: 1;
+        transform: scale(1);
     }
-  }
-  
-  .animate-fadeIn {
+}
+
+.animate-fadeIn {
     animation: fadeIn 0.6s ease-out both;
-  }
-  
-  .delay-100 {
-    animation-delay: 0.1s;
-  }
-  
-  .btn {
-    transition: box-shadow 0.3s ease;
+}
+
+.btn {
+    @apply transition-all duration-300 bg-[var(--secondary)] text-[var(--primary)];
 }
 
 .btn:hover {
-    box-shadow: 0px 8px 0px 1px #FFEB00, 0 4px 6px -2px #FFEB00;
+    @apply bg-[var(--primary)] text-[var(--secondary)];
+    box-shadow: 0px 8px 0px 1px var(--primary), 0 4px 6px -2px var(--primary);
 }
 
-.getintouch{
-  transition: color 0.8s ease-in-out, text-decoration-color 0.5s ease-in-out;
-    
+.getintouch {
+    @apply transition-colors duration-300 text-[var(--text-secondary)];
 }
 
 .getintouch:hover {
-    text-decoration-color: #FFEB00;
+    @apply text-[var(--text)];
+    text-decoration-color: var(--primary);
 }
 
+/* Card styles */
+.card {
+    @apply bg-[var(--card-bg)] border border-[var(--border-color)] transition-all duration-300;
+}
+
+.card:hover {
+    @apply border-[var(--primary)];
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and form styles */
+input, textarea {
+    @apply bg-[var(--card-bg)] text-[var(--text)] border border-[var(--border-color)];
+}
+
+input:focus, textarea:focus {
+    @apply border-[var(--primary)] outline-none;
+}
+
+/* Link styles */
+a {
+    @apply text-[var(--text)] transition-colors duration-300;
+}
+
+a:hover {
+    @apply text-[var(--primary)];
+}
 
 /* Fade-in effect */
 .fade-up {
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Staggered fade-in */
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hide-scroll-bar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
 .hide-scroll-bar::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
